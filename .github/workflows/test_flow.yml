@@ -9,6 +9,8 @@ on:
 
 env:
    SAMPLE_SECRET: ${{ secrets.SAMPLE_SECRET }}
+   ARM_USERNAME: ${{ secrets.ARM_USERNAME }}
+   ARM_TOKEN: ${{ secrets.TOKEN }}
 
 jobs:
   build:
