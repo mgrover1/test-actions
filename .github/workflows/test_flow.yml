@@ -35,4 +35,4 @@ jobs:
      
       - name: Test env
         run: |
-          python -m print_env_var.py
+          python print_env_var.py
