@@ -7,6 +7,9 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+   SAMPLE_SECRET: ${{ secrets.SAMPLE_SECRET }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,4 +32,7 @@ jobs:
           environment-file: environment.yml
           mamba-version: '*'
           use-mamba: true
-
+     
+      - name: Test env
+        run: |
+          python -m print_env_var.py
