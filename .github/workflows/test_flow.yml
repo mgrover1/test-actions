@@ -1,0 +1,32 @@
+name: nightly
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # run at 6 AM UTC
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup miniconda environment
+        uses: conda-incubator/setup-miniconda@master
+        with:
+          channels: conda-forge,nodefaults
+          channel-priority: strict
+          activate-environment: test-actions
+          auto-update-conda: false
+          python-version: 3.9
+          environment-file: environment.yml
+          mamba-version: '*'
+          use-mamba: true
+
