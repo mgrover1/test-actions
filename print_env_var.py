@@ -9,7 +9,7 @@ print(var)
 print(type(username))
 print(type(token))
 print(len(username))
-print(eln(token))
+print(len(token))
 print(username)
 print(token)
 
