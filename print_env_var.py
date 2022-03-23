@@ -3,7 +3,7 @@ import act
 
 var = os.getenv('SAMPLE_SECRET')
 username = os.getenv('ARM_USERNAME')
-token = os.getenv('ARM_TOKEN')
+token = os.getenv('ARM_PASSWORD')
 
 print(var)
 print(type(username))
