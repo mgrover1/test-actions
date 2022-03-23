@@ -8,6 +8,7 @@ token = os.getenv('ARM_TOKEN')
 print(var)
 print(type(username))
 print(type(token))
+print(username)
 
 files = act.discovery.download_data(username, token, 'sgpceilC1.b1', '2017-01-14', '2017-01-19')
 print(len(files))
