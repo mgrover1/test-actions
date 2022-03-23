@@ -2,7 +2,7 @@ name: nightly
 
 on:
   schedule:
-    - cron: '0 6 * * *' # run at 6 AM UTC
+    - cron: '0 8 * * *' # run at 6 AM UTC
   push:
   pull_request:
   workflow_dispatch:
