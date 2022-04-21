@@ -43,7 +43,7 @@ jobs:
       - name: Install Py-ART
         run: |
           mamba install pip
-          pip install git+https://github.com/ARM-DOE/pyart --force-reinstall
+          python -m pip install git+https://github.com/ARM-DOE/pyart --force-reinstall
           
       - name: Check RSL Path
         env:
