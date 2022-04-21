@@ -42,7 +42,7 @@ jobs:
 
       - name: Install Py-ART
         run: |
-          python -m mamba install pip
+          mamba install pip
           pip install git+https://github.com/ARM-DOE/pyart
           
       - name: Check RSL Path
