@@ -37,7 +37,7 @@ jobs:
      
       - name: Set TRMM RSL path
         run: |
-          python -m mamba install -c conda-forge trmm_rsl
+          python -m conda install -c conda-forge trmm_rsl
           export RSL_PATH=${{ env.CONDA_PKGS_DIR }}/trmm_rsl-1.49-3
           
       - name: Check RSL Path
