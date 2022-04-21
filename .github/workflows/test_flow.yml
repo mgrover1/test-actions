@@ -37,8 +37,12 @@ jobs:
      
       - name: Set TRMM RSL path
         run: |
-          conda install -c conda-forge trmm_rsl
+          mamba install -c conda-forge trmm_rsl
           export RSL_PATH=${{ env.CONDA_PKGS_DIR }}/trmm_rsl-1.49-3
+
+      - name: Install Py-ART
+        run: |
+          mamba install -c conda-forge arm_pyart
           
       - name: Check RSL Path
         env:
