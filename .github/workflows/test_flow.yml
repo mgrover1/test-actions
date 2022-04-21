@@ -35,6 +35,13 @@ jobs:
           mamba-version: '*'
           use-mamba: true
      
-      - name: Test env
+      - name: Set TRMM RSL path
         run: |
-          python print_env_var.py
+          python -m mamba install -c conda-forge trmm_rsl
+          export RSL_PATH=${{ env.CONDA_PKGS_DIR }}/trmm_rsl-1.49-3
+          
+      - name: Check RSL Path
+        env:
+          RSL_PATH: ${{ env.CONDA_PKGS_DIR }}/trmm_rsl-1.49-3
+        run: |
+          echo $RSL_PATH
