@@ -39,7 +39,7 @@ jobs:
         run: |
           mamba install -c conda-forge trmm_rsl
           echo "RSL_PATH=$(find "$CONDA_PKGS_DIR" -name '*trmm_rsl-1.49-*')" >> $GITHUB_ENV
-          echo "RSL PATH: " $RSL_PATH
+          echo "RSL PATH: " ${{ env.RSL_PATH }}
 
       - name: Install Py-ART
         run: |
