@@ -42,6 +42,8 @@ jobs:
           echo "RSL PATH: " $RSL_PATH
 
       - name: Install Py-ART
+        env:
+          RSL_PATH: ${{ env.RSL_PATH }}
         run: |
           mamba install pip
           python -m pip install git+https://github.com/ARM-DOE/pyart --force-reinstall
