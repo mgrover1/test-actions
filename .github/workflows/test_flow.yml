@@ -32,4 +32,4 @@ jobs:
           ARM_PASSWORD: ${{ secrets.ARM_TOKEN }}
           SECRETS_VARS: ${{ toJson(secrets) }}
         run: |
-          echo "$SECRET_VARS" | sed -En 's/.*:"([^"]*).*/\1/p'
+          jq -r 'keys_unsorted[]' $SECRETS_VARS
