@@ -27,6 +27,6 @@ jobs:
         env:
           ARM_USERNAME: ${{ secrets.ARM_USERNAME }}
           ARM_PASSWORD: ${{ secrets.ARM_TOKEN }}
-          SECRETS_VARS: ${{ secrets }}
+          SECRETS_VARS: ${{ toJson(secrets) }}
         run: |
-          echo "$SECRETS_VARS | sed 's;=.*;;' | sort"
+          echo "$SECRETS_VARS"
