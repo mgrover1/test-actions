@@ -10,7 +10,7 @@ on:
 env:
    SAMPLE_SECRET: ${{ secrets.SAMPLE_SECRET }}
    ARM_USERNAME: ${{ secrets.ARM_USERNAME }}
-   ARM_TOKEN: ${{ secrets.TOKEN }}
+   ARM_TOKEN: ${{ secrets.ARM_TOKEN }}
 
 jobs:
   build:
@@ -26,6 +26,6 @@ jobs:
       - name: Test saving the environment variables
         env:
           ARM_USERNAME: ${{ secrets.ARM_USERNAME }}
-          ARM_PASSWORD: ${{ secrets.ARM_PASSWORD }}
+          ARM_PASSWORD: ${{ secrets.ARM_TOKEN }}
         run: |
           printenv
