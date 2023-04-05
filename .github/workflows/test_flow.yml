@@ -22,18 +22,6 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Setup miniconda environment
-        uses: conda-incubator/setup-miniconda@master
-        with:
-          channels: conda-forge,nodefaults
-          channel-priority: strict
-          activate-environment: test-actions
-          auto-update-conda: false
-          python-version: 3.9
-          environment-file: environment.yml
-          mamba-version: '*'
-          use-mamba: true
      
       - name: Test saving the environment variables
         env:
