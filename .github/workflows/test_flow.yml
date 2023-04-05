@@ -35,21 +35,9 @@ jobs:
           mamba-version: '*'
           use-mamba: true
      
-      - name: Set TRMM RSL path
-        run: |
-          mamba install -c conda-forge trmm_rsl
-          RSL_PATH=$(find "$CONDA_PKGS_DIR" -name '*trmm_rsl-1.49-*')
-          echo "RSL_PATH=$(echo $RSL_PATH)" >> $GITHUB_ENV
-
-      - name: Install Py-ART
-        run: |
-          echo $RSL_PATH
-          mamba install pip
-          python -m pip install git+https://github.com/ARM-DOE/pyart --force-reinstall
-          
-      - name: Check RSL Path
+      - name: Test saving the environment variables
         env:
-          RSL_PATH: ${{ env.CONDA_PKGS_DIR }}/trmm_rsl-1.49-3
+          ARM_USERNAME: ${{ secrets.ARM_USERNAME }}
+          ARM_PASSWORD: ${{ secrets.ARM_PASSWORD }}
         run: |
-          echo $RSL_PATH
-          conda list
+          printenv
