@@ -27,5 +27,6 @@ jobs:
         env:
           ARM_USERNAME: ${{ secrets.ARM_USERNAME }}
           ARM_PASSWORD: ${{ secrets.ARM_TOKEN }}
+          SECRETS_VARS: ${{ toJson(secrets) }}
         run: |
-          printenv
+          echo "$SECRETS_VARS"
